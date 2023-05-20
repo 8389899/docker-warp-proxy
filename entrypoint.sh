@@ -11,7 +11,7 @@ warp-cli --accept-tos set-proxy-port 40001
 if [ "$LICENSE" != "" ]; then
 	warp-cli --accept-tos set-license $LICENSE
 fi
-warp-cli lear-custom-endpoint
+warp-cli clear-custom-endpoint
 warp-cli set-custom-endpoint $EIP
 warp-cli --accept-tos connect
 socat TCP-LISTEN:40000,fork TCP:localhost:40001  # socat is used to redirect traffic from 40000 to 40001
